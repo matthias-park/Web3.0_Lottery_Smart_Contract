@@ -1,12 +1,12 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const { Web3 } = require('web3');
 const { interface, bytecode } = require('./compile');
+const mnemonic = process.env.MNEMONIC;
+const api = process.env.API;
 
 const provider = new HDWalletProvider(
-  'REPLACE_WITH_YOUR_MNEMONIC',
-  // remember to change this to your own phrase!
-  'REPLACE WITH YOUR INFURA URL'
-  // remember to change this to your own endpoint!
+  mnemonic,
+  api
 );
 const web3 = new Web3(provider);
 
